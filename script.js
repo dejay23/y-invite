@@ -136,7 +136,7 @@ function typeMessage() {
 
 // Type Final Message
 function typeFinalMessage() {
-    const finalMessage = "I love you!";
+    const finalMessage = "I love you, palagi!";
     const finalMessageElement = document.getElementById("final-message");
     let index = 0;
 
