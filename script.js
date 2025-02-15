@@ -53,6 +53,7 @@ function generatePuzzle() {
         piece.classList.add('piece');
         piece.dataset.value = num;
         piece.dataset.index = index;
+        piece.textContent = num; // Assign the number to the box
         piece.onclick = () => revealTile(index);
         puzzleContainer.appendChild(piece);
     });
@@ -143,11 +144,17 @@ function typeFinalMessage() {
     // Start floating hearts as soon as typing begins
     createFloatingHearts();
 
+    // Add typing class for animation
+    finalMessageElement.classList.add("typing");
+
     function typeWriter() {
         if (index < finalMessage.length) {
             finalMessageElement.textContent += finalMessage.charAt(index);
             index++;
             setTimeout(typeWriter, 100); // Adjust typing speed here
+        } else {
+            // Remove typing class after animation completes
+            finalMessageElement.classList.remove("typing");
         }
     }
 
