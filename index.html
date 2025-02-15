@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS -->
+</head>
+<body>
+    <!-- Screen 1: Passcode Entry -->
+    <div class="container" id="screen1">
+        <h2>Enter Passcode</h2>
+        <input type="password" id="passcode" placeholder="Enter passcode" maxlength="4" oninput="checkPasscode()">
+        <p id="error" style="display:none; color: red;">It's our birthday.</p>
+    </div>
+
+    <!-- Screen 2: Guess the Number -->
+    <div class="container hidden" id="screen2">
+        <h2>Guess the Number</h2>
+        <p>Pick a number between 1 and 10:</p>
+        <input type="number" id="guess" min="1" max="10" oninput="checkGuess()">
+        <p id="guess-result"></p>
+    </div>
+
+    <!-- Screen 3: Match the Pairs -->
+    <div class="container hidden" id="screen3">
+        <h2>Match the Pairs</h2>
+        <div id="puzzle"></div>
+    </div>
+
+    <!-- Screen 4: Apology Message -->
+    <div class="container hidden" id="screen4">
+        <div class="tv">
+            <div id="message"></div>
+        </div>
+    </div>
+
+    <!-- Screen 5: Final Message -->
+    <div class="container hidden" id="screen5">
+        <div class="tv">
+            <div id="final-message"></div>
+        </div>
+    </div>
+
+    <!-- Audio -->
+    <audio id="song" src="blue.mp3"></audio>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
